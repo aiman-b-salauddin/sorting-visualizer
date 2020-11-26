@@ -25,13 +25,14 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./src/styles.scss"
             ],
             "scripts": []
           },
@@ -68,7 +69,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "XSort:build"
+            "browserTarget": "XSort:build",
+            "deployUrl": "/",
+            "baseHref": "/"
           },
           "configurations": {
             "production": {
@@ -127,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "XSort"
+  "defaultProject": "XSort",
+  "cli": {
+    "analytics": "91f81e2d-6092-4412-9dd2-2a094ed40a5f"
+  }
 }
